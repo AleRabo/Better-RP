@@ -1,5 +1,5 @@
 # Better RP
- This plugin make better the RolePlay
+ This exiled plugin make better the RolePlay
 
 
 # Config:
