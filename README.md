@@ -1,13 +1,13 @@
 # Better RP
- This exiled plugin make better the RolePlay
+This exiled plugin includes useful features that can improve the RP server experience.
 
 Some cool features of this plugin:
 
-- Elevator can be broken
-- There are some hints that should represent the player's thoughts
-- A damage indicator
+- Elevator have a configurable chance to be broken
+- Hints that should represent the player's thoughts while doing certain actions
+- A damage indicator showing how much damage is dealt to players
 - If you are MTF you can cuff SCPS
-- A starting cassie that say which scp breach containment
+- A starting cassie announcement saying a containment breach has occured
 
 
 
@@ -20,7 +20,7 @@ BetterRP:
   # The chance that the elevetor is broken (-1 for disable it)
   elevator_broken_chance: 9
   # The broadcast that shows up when the elevator is broken
-  broking_elevator: <size=70><color=red> The elevator was broken</color></size>
+  broken_elevator: <size=70><color=red> The elevator was broken</color></size>
   # The hint that shows up when a player find a blocked door
   interacting_blocked_door: <size=30> I need a <size=30><color=green>Key Card</color></size> for open this door</size>
   # The hint that shows up when a player activate the alpha warhead
