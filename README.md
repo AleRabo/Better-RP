@@ -1,6 +1,15 @@
 # Better RP
  This exiled plugin make better the RolePlay
 
+Some cool features of this plugin:
+
+- Elevator can be broken
+- There are some hints that should represent the player's thoughts
+- A damage indicator
+- If you are MTF you can cuff SCPS
+- A starting cassie that say which scp breach containment
+
+
 
 # Config:
 
