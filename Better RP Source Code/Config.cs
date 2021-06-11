@@ -14,7 +14,7 @@ namespace BetterRP
         public int ElevatorBrokenChance { get; set; } = 9;
 
         [Description("The broadcast that shows up when the elevator is broken")]
-        public string BrokingElevator { get; set; } = "<size=70><color=red> The elevator was broken</color></size>";
+        public string broken_elevator { get; set; } = "<size=70><color=red> The elevator was broken</color></size>";
 
         [Description("The hint that shows up when a player find a blocked door")]
         public string InteractingBlockedDoor { get; set; } = "<size=30> I need a <size=30><color=green>Key Card</color></size> for open this door</size>";
