@@ -19,7 +19,7 @@ namespace BetterRP.EventHandlers
             if (new System.Random().Next(0, 101) <= Plugin.Instance.Config.ElevatorBrokenChance)
             {
                 ev.Player.Kill(DamageTypes.Falldown);
-                ev.Player.Broadcast(6, Plugin.Instance.Config.BrokingElevator);
+                ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
             }
         }
         public static void OnInteractingBlockedDoor(InteractingDoorEventArgs ev)
