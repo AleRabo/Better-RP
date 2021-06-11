@@ -1,4 +1,4 @@
-﻿namespace BetterRP.EventHandlers
+namespace BetterRP.EventHandlers
 {
     using System;
     using System.Collections.Generic;
@@ -51,8 +51,9 @@
 
             if (ev.IsAllowed == false)
             {
+                return;
             }
-            return;
+          
 
             if (ev.Target == null)
             {
