@@ -24,31 +24,13 @@ namespace BetterRP.EventHandlers
                     {
                         ev.Player.Hurt(400, DamageTypes.Falldown);
                         ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
-
                     }
-                }
-                if (ev.Player.Team == Team.CDP)
-                {
-                    ev.Player.Kill(DamageTypes.Falldown);
-                    ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
-                }
 
-                if (ev.Player.Team == Team.CHI)
-                {
-                    ev.Player.Kill(DamageTypes.Falldown);
-                    ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
-                }
-
-                if (ev.Player.Team == Team.MTF)
-                {
-                    ev.Player.Kill(DamageTypes.Falldown);
-                    ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
-                }
-
-                if (ev.Player.Team == Team.RSC)
-                {
-                    ev.Player.Kill(DamageTypes.Falldown);
-                    ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
+                    if (ev.Player.IsHuman)
+                    {
+                        ev.Player.Kill(DamageTypes.Falldown);
+                        ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
+                    }
                 }
             }
         }
