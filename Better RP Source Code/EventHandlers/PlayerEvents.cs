@@ -18,10 +18,45 @@ namespace BetterRP.EventHandlers
         {
             if (new System.Random().Next(0, 101) <= Plugin.Instance.Config.ElevatorBrokenChance)
             {
-                ev.Player.Kill(DamageTypes.Falldown);
-                ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
+                if (Plugin.Instance.Config.ElevatorBrokeAfflictScps)
+                {
+                    if (ev.Player.Team == Team.SCP)
+                    {
+                        ev.Player.Hurt(400, DamageTypes.Falldown);
+                        ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
+
+                    }
+                }
+                if (ev.Player.Team == Team.CDP)
+                {
+                    ev.Player.Kill(DamageTypes.Falldown);
+                    ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
+                }
+
+                if (ev.Player.Team == Team.CHI)
+                {
+                    ev.Player.Kill(DamageTypes.Falldown);
+                    ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
+                }
+
+                if (ev.Player.Team == Team.MTF)
+                {
+                    ev.Player.Kill(DamageTypes.Falldown);
+                    ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
+                }
+
+                if (ev.Player.Team == Team.RSC)
+                {
+                    ev.Player.Kill(DamageTypes.Falldown);
+                    ev.Player.Broadcast(6, Plugin.Instance.Config.broken_elevator);
+                }
             }
         }
+
+
+
+
+
         public static void OnInteractingBlockedDoor(InteractingDoorEventArgs ev)
         {
             if (ev.IsAllowed == false)
