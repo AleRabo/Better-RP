@@ -31,6 +31,7 @@ BetterRP:
   damage_indicator_is_enabled: true
   # The hint that shows up when a player hit an another player
   damage_indicator_hint: <size=20> You damaged %player, %damage of damage caused</size>
-  # Whether or not is the damage indicator is enabled?
+  # Whether or not MTF can cuff SCPS?
   m_t_f_can_cuff_scps: true
   ```
+  
