@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using Exiled.API.Interfaces;
 using Exiled.Loader.Features.Configs;
 
@@ -15,6 +15,9 @@ namespace BetterRP
 
         [Description("The broadcast that shows up when the elevator is broken")]
         public string broken_elevator { get; set; } = "<size=70><color=red> The elevator was broken</color></size>";
+
+        [Description("Whether or not is the broken elevator afflict the SCPS")]
+        public bool ElevatorBrokeAfflictScps { get; set; } = true;
 
         [Description("The hint that shows up when a player find a blocked door")]
         public string InteractingBlockedDoor { get; set; } = "<size=30> I need a <size=30><color=green>Key Card</color></size> for open this door</size>";
@@ -33,6 +36,3 @@ namespace BetterRP
 
         [Description("Whether or not is the damage indicator is enabled?")]
         public bool MTFCanCuffScps { get; set; } = true;
-    }
-
-}
