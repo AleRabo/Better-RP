@@ -21,6 +21,8 @@ BetterRP:
   elevator_broken_chance: 9
   # The broadcast that shows up when the elevator is broken
   broken_elevator: <size=70><color=red> The elevator was broken</color></size>
+  # Whether or not is the broken elevator afflict the SCPS
+  ElevatorBrokeAfflictScps: true
   # The hint that shows up when a player find a blocked door
   interacting_blocked_door: <size=30> I need a <size=30><color=green>Key Card</color></size> for open this door</size>
   # The hint that shows up when a player activate the alpha warhead
