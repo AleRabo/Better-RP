@@ -1,5 +1,5 @@
 # Better RP
-This exiled plugin includes useful features that can improve the RP server experience.
+This exiled plugin includes useful features that can improve the RP server experience. (the scp cuffing don't work if the target scp have a subclass)
 
 Some cool features of this plugin:
 
