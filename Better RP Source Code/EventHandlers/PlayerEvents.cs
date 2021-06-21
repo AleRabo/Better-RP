@@ -57,6 +57,10 @@ namespace BetterRP.EventHandlers
                 {
 
                     ev.IsTriggerable = false;
+
+                }
+                if (ev.Player.CurrentItem.id == ItemType.WeaponManagerTablet)
+                {
                     ev.Player.ShowHint(Plugin.Instance.Config.TeslaGatebypasstHint, 3);
                 }
             }
@@ -69,6 +73,10 @@ namespace BetterRP.EventHandlers
 
         public static void OnPlayerHeal(UsedMedicalItemEventArgs ev)
         {
+            if (ev.Item == ItemType.SCP268)
+            {
+                return;
+            }
             ev.Player.ShowHint(Plugin.Instance.Config.PlayerHealHint, 6);
         }
 
@@ -154,5 +162,6 @@ namespace BetterRP.EventHandlers
           
     }
 }
+
 
 
