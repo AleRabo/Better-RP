@@ -34,5 +34,27 @@ namespace BetterRP
         [Description("The hint that shows up when a player hit an another player")]
         public string DamageIndicatorHint { get; set; } = "<size=20> You damaged %player, %damage of damage caused</size>";
 
-        [Description("Whether or not is the damage indicator is enabled?")]
-        public bool MTFCanCuffScps { get; set; } = true;
+        [Description("The bypass for tesla gate with a tablet")]
+        public bool TeslagateBypassWithTablet { get; set; } = true;
+
+        [Description("The hint that shows up when a stop a tesla gate with a tablet")]
+        public string TeslaGatebypasstHint { get; set; } = "<size=20> With this tablet the tesla gate are no longer a problem</size>";
+
+        [Description("Whether or not the human can cuff scps")]
+        public bool HumanCanCuffSCPS { get; set; } = true;
+
+        [Description("which scps can be cuffed")]
+        public bool Scps939 { get; set; } = true;
+
+        public bool Scp096 { get; set; } = true;
+
+        public bool Scp173 { get; set; } = true;
+
+        public bool Scp106 { get; set; } = true;
+
+        public bool Scp049 { get; set; } = true;
+
+        public bool Scp0492 { get; set; } = true;
+    }
+
+}
