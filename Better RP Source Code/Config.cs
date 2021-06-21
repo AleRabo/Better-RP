@@ -1,7 +1,6 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Exiled.API.Interfaces;
-using Exiled.Loader.Features.Configs;
-
 
 namespace BetterRP
 {
@@ -40,21 +39,16 @@ namespace BetterRP
         [Description("The hint that shows up when a stop a tesla gate with a tablet")]
         public string TeslaGatebypasstHint { get; set; } = "<size=20> With this tablet the tesla gate are no longer a problem</size>";
 
-        [Description("Whether or not the human can cuff scps")]
-        public bool HumanCanCuffSCPS { get; set; } = true;
-
-        [Description("which scps can be cuffed")]
-        public bool Scps939 { get; set; } = true;
-
-        public bool Scp096 { get; set; } = true;
-
-        public bool Scp173 { get; set; } = true;
-
-        public bool Scp106 { get; set; } = true;
-
-        public bool Scp049 { get; set; } = true;
-
-        public bool Scp0492 { get; set; } = true;
+        [Description("List of SCP roles that can be cuffed")]
+        public List<RoleType> SCPRoles { get; set; } = new List<RoleType>
+        {
+            RoleType.Scp93989,
+            RoleType.Scp93953,
+            RoleType.Scp049,
+            RoleType.Scp096,
+            RoleType.Scp106,
+            RoleType.Scp173,
+            RoleType.Scp0492
+        };
     }
-
 }
