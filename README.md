@@ -8,7 +8,7 @@ Some cool features of this plugin:
 - A damage indicator showing how much damage is dealt to players
 - If you are MTF you can cuff SCPS
 - A starting cassie announcement saying a containment breach has occured
-
+- A tesla gate bypass if you have a tablet in your inventory
 
 
 # Config:
