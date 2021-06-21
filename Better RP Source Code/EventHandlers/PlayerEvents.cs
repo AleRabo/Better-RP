@@ -11,6 +11,11 @@ namespace BetterRP.EventHandlers
     using UnityEngine;
     using Exiled.API.Extensions;
     using Exiled.Bootstrap;
+    using Exiled.Events.Extensions;
+    using UnityEditor;
+    using UnityEngineInternal;
+    using UnityStandardAssets;
+    
 
     public class PlayerEvents
     {
@@ -36,14 +41,24 @@ namespace BetterRP.EventHandlers
         }
 
 
-
-
-
-        public static void OnInteractingBlockedDoor(InteractingDoorEventArgs ev)
+    public static void OnInteractingBlockedDoor(InteractingDoorEventArgs ev)
         {
             if (ev.IsAllowed == false)
             {
                 ev.Player.ShowHint(Plugin.Instance.Config.InteractingBlockedDoor, 6);
+            }
+        }
+
+        public static void OnTriggeringTesla(TriggeringTeslaEventArgs ev)
+        {
+            if (Plugin.Instance.Config.TeslagateBypassWithTablet)
+            {
+                if (ev.Player.HasItem(ItemType.WeaponManagerTablet))
+                {
+
+                    ev.IsTriggerable = false;
+                    ev.Player.ShowHint(Plugin.Instance.Config.TeslaGatebypasstHint, 3);
+                }
             }
         }
 
@@ -70,7 +85,7 @@ namespace BetterRP.EventHandlers
             {
                 return;
             }
-          
+
 
             if (ev.Target == null)
             {
@@ -91,19 +106,52 @@ namespace BetterRP.EventHandlers
         }
         public static void OnCuffingSCP(HandcuffingEventArgs ev)
         {
-            if (Plugin.Instance.Config.MTFCanCuffScps == true)
+            if (Plugin.Instance.Config.HumanCanCuffSCPS == true)
             {
-                if (ev.Cuffer.Team == Team.MTF && ev.Target.Team == Team.SCP && true)
+                if (ev.Cuffer.IsHuman && ev.Target.Team == Team.SCP && true)
                 {
+                    if (ev.Target.Role == RoleType.Scp93989)
+                    {
+                        ev.IsAllowed = Plugin.Instance.Config.Scps939;
+                    }
+
+                    if (ev.Target.Role == RoleType.Scp93953)
+                    {
+                        ev.IsAllowed = Plugin.Instance.Config.Scps939;
+                    }
+
+                    if (ev.Target.Role == RoleType.Scp173)
+                    {
+                        ev.IsAllowed = Plugin.Instance.Config.Scp173;
+                    }
+
+                    if (ev.Target.Role == RoleType.Scp049)
+                    {
+                        ev.IsAllowed = Plugin.Instance.Config.Scp049;
+                    }
+
+                    if (ev.Target.Role == RoleType.Scp0492)
+                    {
+                        ev.IsAllowed = Plugin.Instance.Config.Scp0492;
+                    }
+
+                    if (ev.Target.Role == RoleType.Scp096)
+                    {
+                        ev.IsAllowed = Plugin.Instance.Config.Scp096;
+                    }
+
                     ev.IsAllowed = true;
+
 
                 }
 
             }
 
 
+
         }
 
+          
     }
 }
 
