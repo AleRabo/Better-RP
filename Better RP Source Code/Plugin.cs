@@ -1,4 +1,4 @@
-﻿namespace BetterRP
+namespace BetterRP
 {
     using BetterRP.EventHandlers;
     using System;
@@ -44,6 +44,7 @@
 
             ServerHandlers.RoundStarted += ServerEvents.OnRoundStarted;
 
+            PlayerHandlers.TriggeringTesla += PlayerEvents.OnTriggeringTesla;
             PlayerHandlers.Hurting += PlayerEvents.OnHurting;
             PlayerHandlers.InteractingElevator += PlayerEvents.OnBrokingElevator;
             PlayerHandlers.InteractingDoor += PlayerEvents.OnInteractingBlockedDoor;
@@ -60,6 +61,7 @@
 
             ServerHandlers.RoundStarted -= ServerEvents.OnRoundStarted;
 
+            PlayerHandlers.TriggeringTesla -= PlayerEvents.OnTriggeringTesla;
             PlayerHandlers.Hurting -= PlayerEvents.OnHurting;
             PlayerHandlers.InteractingElevator -= PlayerEvents.OnBrokingElevator;
             PlayerHandlers.InteractingDoor -= PlayerEvents.OnInteractingBlockedDoor;
