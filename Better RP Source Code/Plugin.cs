@@ -24,7 +24,10 @@ namespace BetterRP
         {
             Singleton = this;
             EventHandlers = new EventHandlers();
+
+            
             ServerHandlers.RoundStarted += EventHandlers.ScpBreakContainmentAnnouncement;
+
             PlayerHandlers.TriggeringTesla += EventHandlers.OnTriggeringTesla;
             PlayerHandlers.Hurting += EventHandlers.OnHurting;
             PlayerHandlers.InteractingElevator += EventHandlers.OnBrokingElevator;
@@ -38,6 +41,7 @@ namespace BetterRP
         public override void OnDisabled()
         {
             ServerHandlers.RoundStarted -= EventHandlers.ScpBreakContainmentAnnouncement;
+
             PlayerHandlers.TriggeringTesla -= EventHandlers.OnTriggeringTesla;
             PlayerHandlers.Hurting -= EventHandlers.OnHurting;
             PlayerHandlers.InteractingElevator -= EventHandlers.OnBrokingElevator;
