@@ -27,17 +27,20 @@ namespace BetterRP
                 Cassie.DelayedMessage("class d have breached the Containment", 5);
             Cassie.DelayedMessage($"attention all personnel detected {SCPs.Count()} scpsubject breach {text}", 5);
         }
+
+      
+
         // The elevator broke
         public void OnBrokingElevator(InteractingElevatorEventArgs ev)
         {
             if (UnityEngine.Random.Range(0, 101) <= Plugin.Singleton.Config.ElevatorBrokenChance)
             {
                 if (Plugin.Singleton.Config.ElevatorBrokeAfflictScps && ev.Player.IsScp)
-                    ev.Player.Hurt(400, DamageTypes.Falldown);
+                    MEC.Timing.CallDelayed(2.0f, () => ev.Player.Hurt(400, DamageTypes.Falldown));
 
                 if (ev.Player.IsHuman)
-                    ev.Player.Kill(DamageTypes.Falldown);
-                ev.Player.Broadcast(6, Plugin.Singleton.Config.broken_elevator);
+                    MEC.Timing.CallDelayed(2.0f, () => ev.Player.Kill(DamageTypes.Falldown));
+                MEC.Timing.CallDelayed(2.0f, () => ev.Player.Broadcast(6, Plugin.Singleton.Config.broken_elevator)); 
             }
         }
 
