@@ -1,4 +1,4 @@
-   [img](https://img.shields.io/github/downloads/AleRabo/Better-RP/total.svg)
+   ![img](https://img.shields.io/github/downloads/AleRabo/Better-RP/total.svg)
 
 # Better RP
 This exiled plugin includes useful features that can improve the RP server experience. (the scp cuffing don't work if the target scp have a subclass)
