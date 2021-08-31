@@ -1,5 +1,5 @@
-
 using Exiled.API.Features;
+using System;
 using PlayerHandlers = Exiled.Events.Handlers.Player;
 using ServerHandlers = Exiled.Events.Handlers.Server;
 
@@ -11,9 +11,9 @@ namespace BetterRP
         // The singleton of the plugin
         public static Plugin Singleton;
 
-
         public override string Prefix => "BetterRP";
 
+        public override Version RequiredExiledVersion { get; } = new Version(2, 8, 0);
 
         /// <summary>
         /// The event handlers <see cref="BetterRP.EventHandlers"/> class.
@@ -27,13 +27,14 @@ namespace BetterRP
 
             
             ServerHandlers.RoundStarted += EventHandlers.ScpBreakContainmentAnnouncement;
+     
 
             PlayerHandlers.TriggeringTesla += EventHandlers.OnTriggeringTesla;
             PlayerHandlers.Hurting += EventHandlers.OnHurting;
             PlayerHandlers.InteractingElevator += EventHandlers.OnBrokingElevator;
             PlayerHandlers.InteractingDoor += EventHandlers.OnInteractingBlockedDoor;
             PlayerHandlers.ActivatingWarheadPanel += EventHandlers.OnActivatingWarheadPanel;
-            PlayerHandlers.MedicalItemUsed += EventHandlers.OnPlayerHeal;
+            PlayerHandlers.ItemUsed += EventHandlers.OnPlayerHeal;
             PlayerHandlers.Handcuffing += EventHandlers.OnCuffingSCP;
             base.OnEnabled();
         }
@@ -47,7 +48,7 @@ namespace BetterRP
             PlayerHandlers.InteractingElevator -= EventHandlers.OnBrokingElevator;
             PlayerHandlers.InteractingDoor -= EventHandlers.OnInteractingBlockedDoor;
             PlayerHandlers.ActivatingWarheadPanel -= EventHandlers.OnActivatingWarheadPanel;
-            PlayerHandlers.MedicalItemUsed -= EventHandlers.OnPlayerHeal;
+            PlayerHandlers.ItemUsed -= EventHandlers.OnPlayerHeal;
             PlayerHandlers.Handcuffing -= EventHandlers.OnCuffingSCP;
             EventHandlers = null;
             Singleton = null;
