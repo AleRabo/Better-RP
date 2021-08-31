@@ -34,7 +34,7 @@ namespace BetterRP
         // The elevator broke
         public void OnBrokingElevator(InteractingElevatorEventArgs ev)
         {
-            if (ev.Lift.InRange(ev.Player.Position, out GameObject gm) && Random.Range(0, 101) <= Plugin.Singleton.Config.ElevatorBrokenChance)
+            if (ev.Lift.InRange(ev.Player.Position, out GameObject gameObject) && Random.Range(0, 101) <= Plugin.Singleton.Config.ElevatorBrokenChance)
             {
                     if (Plugin.Singleton.Config.ElevatorBrokeAfflictScps && ev.Player.IsScp)
                     {
