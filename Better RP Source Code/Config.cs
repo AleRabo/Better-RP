@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 using System.ComponentModel;
 using Exiled.API.Interfaces;
@@ -8,7 +7,6 @@ namespace BetterRP
     /// <inheritdoc cref="IConfig"/>
     public class Config : IConfig
     {
-       
         // The plugin configs
 
         [Description("Whether or not is the plugin enabled?")]
