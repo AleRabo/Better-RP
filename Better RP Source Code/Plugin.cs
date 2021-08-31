@@ -13,7 +13,7 @@ namespace BetterRP
 
         public override string Prefix => "BetterRP";
 
-        public override Version RequiredExiledVersion { get; } = new Version(2, 8, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(3, 0, 0);
 
         /// <summary>
         /// The event handlers <see cref="BetterRP.EventHandlers"/> class.
