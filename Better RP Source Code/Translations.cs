@@ -1,6 +1,4 @@
-﻿using Exiled.API.Interfaces;
-using InventorySystem.Items.Usables.Scp330;
-using System.Collections.Generic;
+using Exiled.API.Interfaces;
 using System.ComponentModel;
 
 namespace BetterRP
@@ -22,5 +20,8 @@ namespace BetterRP
 
         [Description("The hint that shows up when a stop a tesla gate with a keycard")]
         public string TeslaGatebypasstHint { get; set; } = "<size=20> With this keycard the tesla gate are no longer a problem</size>";
+
+        [Description("The hint that shows up when a stop a tesla gate with a keycard")]
+        public string ElevatorBlacklistHint { get; set; } = "<size=20>You can't use elevators with the role: %role</size>";
     }
 }
