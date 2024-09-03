@@ -12,14 +12,8 @@ namespace BetterRP
         [Description("Whether or not is the plugin enabled?")]
         public bool IsEnabled { get; set; } = true;
 
-        [Description("The chance that the elevetor is broken (-1 for disable it)")]
-        public int ElevatorBrokenChance { get; set; } = 9;
-
-        [Description("The broadcast that shows up when the elevator is broken")]
-        public string broken_elevator { get; set; } = "<size=70><color=red> The elevator was broken</color></size>";
-
-        [Description("Whether or not is the broken elevator afflict the SCPS")]
-        public bool ElevatorBrokeAfflictScps { get; set; } = true;
+        [Description("Whether or not is the plugin is in debug mode?")]
+        public bool Debug { get; set; } = false;
 
         [Description("The hint that shows up when a player find a blocked door")]
         public string InteractingBlockedDoor { get; set; } = "<size=30> I need a <size=30><color=green>Key Card</color></size> for open this door</size>";
@@ -30,30 +24,27 @@ namespace BetterRP
         [Description("The hint that shows up when a player heal himself")]
         public string PlayerHealHint { get; set; } = "<size=20> Now i'm felling good</size>";
 
-        [Description("Whether or not is the damage indicator is enabled?")]
+        [Description("Whether or not is the damage indicator is enabled")]
         public bool DamageIndicatorIsEnabled { get; set; } = true;
 
         [Description("The hint that shows up when a player hit an another player")]
         public string DamageIndicatorHint { get; set; } = "<size=20> You damaged %player, %damage of damage caused</size>";
 
-        [Description("The bypass for tesla gate with a tablet")]
-        public bool TeslagateBypassWithTablet { get; set; } = true;
-
-        [Description("The hint that shows up when a stop a tesla gate with a tablet")]
-        public string TeslaGatebypasstHint { get; set; } = "<size=20> With a tablet the tesla gate are no longer a problem</size>";
-
-        // The list of SCPS role that can be cuffed
-
-        [Description("List of SCP roles that can be cuffed")]
-        public List<RoleType> SCPRoles { get; set; } = new List<RoleType>
+        [Description("The tesla gate bypass item (Set an item to None if you want to disable it")]
+        public List<ItemType> TeslagateBypassItem { get; set; } = new List<ItemType>
         {
-            RoleType.Scp93989,
-            RoleType.Scp93953,
-            RoleType.Scp049,
-            RoleType.Scp096,
-            RoleType.Scp106,
-            RoleType.Scp173,
-            RoleType.Scp0492
+            ItemType.KeycardMTFCaptain,
+            ItemType.KeycardMTFOperative,
+            ItemType.KeycardO5,
+            ItemType.KeycardMTFPrivate,
+            ItemType.KeycardGuard,
         };
+
+        [Description("If set to false you must manually disable and reenable the tesla pressing T, if true the tesla automatically disables for the players with the bypass item")]
+        public bool AutoTeslaBypasss { get; set; } = false;
+
+        [Description("The hint that shows up when a stop a tesla gate with a keycard")]
+        public string TeslaGatebypasstHint { get; set; } = "<size=20> With this keycard the tesla gate are no longer a problem</size>";
+
     }
 }
