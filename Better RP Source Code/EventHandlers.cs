@@ -4,7 +4,7 @@ using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.API.Features.Roles;
 using Exiled.Events.EventArgs.Player;
-using MEC;
+using HintServiceMeow.UI.Utilities;
 using PlayerRoles;
 
 namespace BetterRP
@@ -38,7 +38,10 @@ namespace BetterRP
         public void OnInteractingBlockedDoor(InteractingDoorEventArgs ev)
         {
             if (!ev.IsAllowed)
-                ev.Player.ShowHint(BetterRP.Singleton.Config.InteractingBlockedDoor, 6);
+            {
+                var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
+                playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Config.InteractingBlockedDoor);
+            }
         }
 
         // The bypass for tesla gate with a tablet in his inventory
@@ -60,8 +63,8 @@ namespace BetterRP
                 }
                 else
                 {
-                  // The hint that show up when a player bypass a tesla gate
-                    ev.Player.ShowHint(BetterRP.Singleton.Config.TeslaGatebypasstHint);
+                    var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
+                    playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Config.TeslaGatebypasstHint);
 
                     ev.DisableTesla = true;
                 }
@@ -86,20 +89,28 @@ namespace BetterRP
 
         // The hint that show up when someone activate the WarHead panel
         public void OnActivatingWarheadPanel(ActivatingWarheadPanelEventArgs ev)
-            => ev.Player.ShowHint(BetterRP.Singleton.Config.ActivatingWarheadPanel, 6);
-
+        {
+            var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
+            playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Config.ActivatingWarheadPanel);
+        }
         // The hint that show up when someone heal himself
         public void OnPlayerHeal(UsedItemEventArgs ev)
         {
             if (ev.Item.Type == ItemType.Medkit || ev.Item.Type == ItemType.Painkillers)
-                Timing.CallDelayed(2.0f, () => ev.Player.ShowHint(BetterRP.Singleton.Config.PlayerHealHint, 6));
+            {
+                var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
+                playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Config.PlayerHealHint);
+            }
         }
 
         // The damage indicator
         public void OnHurting(HurtingEventArgs ev)
         {
-            if (BetterRP.Singleton.Config.DamageIndicatorIsEnabled && ev.IsAllowed && ev.Player != null && !ev.Player.IsDead && ev.Amount > 0 && ev.Player != ev.Attacker)
-                ev.Attacker.ShowHint(BetterRP.Singleton.Config.DamageIndicatorHint.Replace("%damage", ev.Amount.ToString()).Replace("%player", ev.Player.Nickname), 6);
+            if (ev.Attacker != null && ev.Amount > 0 && ev.Attacker != ev.Player && ev.Attacker.IsAlive && BetterRP.Singleton.Config.DamageIndicatorIsEnabled)
+            {
+                var playerUi = PlayerUI.Get(ev.Attacker);//Could be ReferenceHub or Player
+                playerUi.CommonHint.ShowRoleHint(BetterRP.Singleton.Config.DamageIndicatorHint.Replace("%damage", ev.Amount.ToString()).Replace("%target", ev.Player.Nickname));
+            }
         }
     }
 }
