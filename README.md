@@ -21,27 +21,21 @@ BetterRP:
   is_enabled: true
   # Whether or not is the plugin is in debug mode?
   debug: false
-  # The hint that shows up when a player find a blocked door
-  interacting_blocked_door: '<size=30> I need a <size=30><color=green>Key Card</color></size> for open this door</size>'
-  # The hint that shows up when a player activate the alpha warhead
-  activating_warhead_panel: '<size=30> Ok, now i can activate the Alpha Warhead</size>'
-  # The hint that shows up when a player heal himself
-  player_heal_hint: '<size=20> Now i''m felling good</size>'
   # Whether or not is the damage indicator is enabled
   damage_indicator_is_enabled: true
-  # The hint that shows up when a player hit an another player
-  damage_indicator_hint: '<size=20> You damaged %player, %damage of damage caused</size>'
-  # The tesla gate bypass item (Set an item to None if you want to disable it
+  # The tesla gate bypass item (Set an item to None if you want to disable it)
   teslagate_bypass_item:
   - KeycardMTFCaptain
   - KeycardMTFOperative
   - KeycardO5
   - KeycardMTFPrivate
   - KeycardGuard
-  # If set to false you must manually disable and reenable the tesla pressing T, if true the tesla automatically disables for 5 sec after someone with the bypass item walks through it
-  auto_tesla_bypasss: true
-  # The hint that shows up when a stop a tesla gate with a keycard
-  tesla_gatebypasst_hint: '<size=20> With this keycard the tesla gate are no longer a problem</size>'
+  # The list of SCP roles that can't use elevators
+  elevator_blacklist:
+  - Scp096
+  - Scp939
+  # If set to false you must manually disable and reenable the tesla pressing T, if true the tesla automatically disables for the players with the bypass item
+  auto_tesla_bypasss: false
   ```
   # Items
 Here's a list of all the possible items to set as the tesla bypass items
