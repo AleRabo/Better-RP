@@ -40,7 +40,7 @@ namespace BetterRP
             if (!ev.IsAllowed)
             {
                 var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
-                playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Config.InteractingBlockedDoor);
+                playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Translation.InteractingBlockedDoor);
             }
         }
 
@@ -64,7 +64,7 @@ namespace BetterRP
                 else
                 {
                     var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
-                    playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Config.TeslaGatebypasstHint);
+                    playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Translation.TeslaGatebypasstHint);
 
                     ev.DisableTesla = true;
                 }
@@ -91,7 +91,7 @@ namespace BetterRP
         public void OnActivatingWarheadPanel(ActivatingWarheadPanelEventArgs ev)
         {
             var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
-            playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Config.ActivatingWarheadPanel);
+            playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Translation.ActivatingWarheadPanel);
         }
         // The hint that show up when someone heal himself
         public void OnPlayerHeal(UsedItemEventArgs ev)
@@ -99,7 +99,7 @@ namespace BetterRP
             if (ev.Item.Type == ItemType.Medkit || ev.Item.Type == ItemType.Painkillers)
             {
                 var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
-                playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Config.PlayerHealHint);
+                playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Translation.PlayerHealHint);
             }
         }
 
@@ -109,7 +109,7 @@ namespace BetterRP
             if (ev.Attacker != null && ev.Amount > 0 && ev.Attacker != ev.Player && ev.Attacker.IsAlive && BetterRP.Singleton.Config.DamageIndicatorIsEnabled)
             {
                 var playerUi = PlayerUI.Get(ev.Attacker);//Could be ReferenceHub or Player
-                playerUi.CommonHint.ShowRoleHint(BetterRP.Singleton.Config.DamageIndicatorHint.Replace("%damage", ev.Amount.ToString()).Replace("%target", ev.Player.Nickname));
+                playerUi.CommonHint.ShowRoleHint(BetterRP.Singleton.Translation.DamageIndicatorHint.Replace("%damage", ev.Amount.ToString()).Replace("%target", ev.Player.Nickname));
             }
         }
     }
