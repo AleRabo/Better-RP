@@ -3,8 +3,7 @@
 # Better RP
 This exiled plugin includes useful features that can improve the RP server experience.
 
-THIS PLUGIN USES HINTSERVICEMEOW
-Link: https://github.com/MeowServer/HintServiceMeow/tree/main
+**[THIS PLUGIN USES HintServiceMeow](https://github.com/MeowServer/HintServiceMeow)**
 
 Some cool features of this plugin:
 
