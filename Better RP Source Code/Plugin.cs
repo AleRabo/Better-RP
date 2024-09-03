@@ -14,7 +14,7 @@ namespace BetterRP
         public override string Name => "BetterRP";
         public override string Prefix => "BetterRP";
         public override string Author => "AleRabo";
-        public override Version Version => new Version(2, 0, 2);
+        public override Version Version => new Version(2, 1, 0);
         public override Version RequiredExiledVersion => new Version(8, 11, 0);
 
         /// <summary>
@@ -37,6 +37,7 @@ namespace BetterRP
             PlayerHandlers.ActivatingWarheadPanel += EventHandlers.OnActivatingWarheadPanel;
             PlayerHandlers.UsedItem += EventHandlers.OnPlayerHeal;
             PlayerHandlers.DroppingItem += EventHandlers.OnThrowing;
+            PlayerHandlers.InteractingElevator += EventHandlers.OnElevator;
             base.OnEnabled();
         }
 
@@ -50,6 +51,7 @@ namespace BetterRP
             PlayerHandlers.ActivatingWarheadPanel -= EventHandlers.OnActivatingWarheadPanel;
             PlayerHandlers.UsedItem -= EventHandlers.OnPlayerHeal;
             PlayerHandlers.DroppingItem -= EventHandlers.OnThrowing;
+            PlayerHandlers.InteractingElevator -= EventHandlers.OnElevator;
 
             EventHandlers = null;
 
