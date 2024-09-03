@@ -37,6 +37,27 @@ BetterRP:
   # If set to false you must manually disable and reenable the tesla pressing T, if true the tesla automatically disables for the players with the bypass item
   auto_tesla_bypasss: false
   ```
+
+# Translation
+
+```yml
+
+BetterRP:
+# The hint that shows up when a player find a blocked door
+  interacting_blocked_door: '<size=20> I need a <size=30><color=green>Key Card</color></size> to open this door</size>'
+  # The hint that shows up when a player activate the alpha warhead
+  activating_warhead_panel: '<size=30> Ok, now i can activate the Alpha Warhead</size>'
+  # The hint that shows up when a player heal himself
+  player_heal_hint: '<size=20> Now i''m felling good</size>'
+  # The hint that shows up when a player hit an another player
+  damage_indicator_hint: '<size=20> You damaged %target, %damage of damage caused</size>'
+  # The hint that shows up when a stop a tesla gate with a keycard
+  tesla_gatebypasst_hint: '<size=20> With this keycard the tesla gate are no longer a problem</size>'
+  # The hint that shows up when a stop a tesla gate with a keycard
+  elevator_blacklist_hint: '<size=20>You can''t use elevators with the role: %role</size>'
+
+```
+
   # Items
 Here's a list of all the possible items to set as the tesla bypass items
 
