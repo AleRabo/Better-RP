@@ -44,6 +44,16 @@ namespace BetterRP
             }
         }
 
+        public void OnElevator(InteractingElevatorEventArgs ev)
+        {
+            if (BetterRP.Singleton.Config.ElevatorBlacklist.Contains(ev.Player.Role))
+            {
+                ev.IsAllowed = false;
+                var playerUi = PlayerUI.Get(ev.Player);//Could be ReferenceHub or Player
+                playerUi.CommonHint.ShowItemHint(BetterRP.Singleton.Translation.ElevatorBlacklistHint.Replace("%role", ev.Player.Role.Type.ToString()));
+            }
+        }
+
         // The bypass for tesla gate with a tablet in his inventory
         public void OnTriggeringTesla(TriggeringTeslaEventArgs ev)
         {
