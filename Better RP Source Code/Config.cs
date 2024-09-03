@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Exiled.API.Interfaces;
+using PlayerRoles;
 
 namespace BetterRP
 {
@@ -18,7 +19,7 @@ namespace BetterRP
         [Description("Whether or not is the damage indicator is enabled")]
         public bool DamageIndicatorIsEnabled { get; set; } = true;
 
-        [Description("The tesla gate bypass item (Set an item to None if you want to disable it")]
+        [Description("The tesla gate bypass item (Set an item to None if you want to disable it)")]
         public List<ItemType> TeslagateBypassItem { get; set; } = new List<ItemType>
         {
             ItemType.KeycardMTFCaptain,
@@ -26,6 +27,13 @@ namespace BetterRP
             ItemType.KeycardO5,
             ItemType.KeycardMTFPrivate,
             ItemType.KeycardGuard,
+        };
+
+        [Description("The list of SCP roles that can't use elevators")]
+        public List<RoleTypeId> ElevatorBlacklist { get; set; } = new List<RoleTypeId>
+        {
+            RoleTypeId.Scp096,
+            RoleTypeId.Scp939,
         };
 
         [Description("If set to false you must manually disable and reenable the tesla pressing T, if true the tesla automatically disables for the players with the bypass item")]
