@@ -108,3 +108,19 @@ Here's a list of all the possible items to set as the tesla bypass items
 - Lantern 
 
 ```
+
+# Items
+Here's a list of all the scp roles to set as the door blacklisted roles (You can also blacklist humans)
+
+```yml
+
+- Scp096 
+- Scp939
+- Scp3114
+- Scp049
+- Scp0492
+- Scp106
+- Scp173
+- Scp
+
+```
