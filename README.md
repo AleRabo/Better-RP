@@ -121,6 +121,5 @@ Here's a list of all the scp roles to set as the door blacklisted roles (You can
 - Scp0492
 - Scp106
 - Scp173
-- Scp
 
 ```
