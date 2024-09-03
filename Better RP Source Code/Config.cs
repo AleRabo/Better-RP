@@ -16,7 +16,7 @@ namespace BetterRP
         public bool Debug { get; set; } = false;
 
         [Description("The hint that shows up when a player find a blocked door")]
-        public string InteractingBlockedDoor { get; set; } = "<size=30> I need a <size=30><color=green>Key Card</color></size> for open this door</size>";
+        public string InteractingBlockedDoor { get; set; } = "<size=20> I need a <size=30><color=green>Key Card</color></size> to open this door</size>";
 
         [Description("The hint that shows up when a player activate the alpha warhead")]
         public string ActivatingWarheadPanel { get; set; } = "<size=30> Ok, now i can activate the Alpha Warhead</size>";
@@ -28,7 +28,7 @@ namespace BetterRP
         public bool DamageIndicatorIsEnabled { get; set; } = true;
 
         [Description("The hint that shows up when a player hit an another player")]
-        public string DamageIndicatorHint { get; set; } = "<size=20> You damaged %player, %damage of damage caused</size>";
+        public string DamageIndicatorHint { get; set; } = "<size=20> You damaged %target, %damage of damage caused</size>";
 
         [Description("The tesla gate bypass item (Set an item to None if you want to disable it")]
         public List<ItemType> TeslagateBypassItem { get; set; } = new List<ItemType>
