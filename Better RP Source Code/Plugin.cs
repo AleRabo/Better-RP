@@ -5,7 +5,7 @@ using ServerHandlers = Exiled.Events.Handlers.Server;
 
 namespace BetterRP
 {
-    public class BetterRP : Plugin<Config>
+    public class BetterRP : Plugin<Config, Translation>
     {
 
         public static BetterRP Singleton;
