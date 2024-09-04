@@ -123,7 +123,7 @@ Here's a list of all the possible items to set as the tesla bypass items
 
 ```
 
-# Items
+# SCPs
 Here's a list of all the scp roles to set as the door blacklisted roles (You can also blacklist humans)
 
 ```yml
